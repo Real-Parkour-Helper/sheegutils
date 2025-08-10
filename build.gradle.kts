@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import kotlin.jvm.java
 
 plugins {
     kotlin("jvm") version "2.2.0"
@@ -118,4 +119,12 @@ kotlin {
 
 dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:0.95.1+1.21") // Make sure it's recent
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.13.1")
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.compilerOptions {
+    freeCompilerArgs.addAll(
+        "-Xannotation-default-target=param-property",
+    )
 }

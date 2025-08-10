@@ -38,7 +38,6 @@ class PreviewChatListener {
             val sb = StringBuilder()
             message.siblings.forEach { text -> sb.append(text.string) }
             val rawText = sb.toString()
-            println(rawText)
 
             if (rawText.startsWith("Preview of the first 3 rooms:")) {
                 return true
