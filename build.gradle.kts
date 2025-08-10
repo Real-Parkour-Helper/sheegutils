@@ -113,5 +113,9 @@ publishing {
     }
 }
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(21)
+}
+
+dependencies {
+    modImplementation("net.fabricmc.fabric-api:fabric-api:0.95.1+1.21") // Make sure it's recent
 }
